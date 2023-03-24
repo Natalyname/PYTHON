@@ -1,3 +1,4 @@
+#Task24
 n = int(input("Введите количество кустов черники: "))
 arr = list()
 for i in range(n):
