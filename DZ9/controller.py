@@ -16,8 +16,23 @@ def start():
             model.add_contact(contact)
             model.save_file(contact)
         elif choice == 3:
-            model.edit_contact()
+            pb = model.get_phonebook()
+            view.show_contacts(pb)
+            model.edit_file(view.show_number_contact(pb), 'отредактирован')
         elif choice == 4:
-            search_contact()
+            pb = model.get_phonebook()
+            term = view.search_term()
+            model.search_contact(term, pb)
+        elif choice == 5:
+            pb = model.get_phonebook()
+            view.show_contacts(pb)
+            number_dell = view.number_dell()
+        #    model.dell_contact(number_dell, pb)
+            model.edit_file(model.dell_contact(number_dell, pb), 'удален')
         elif choice == 0:
+            print('До скорой встречи!')
             return
+
+
+
+
